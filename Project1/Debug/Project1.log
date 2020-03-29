@@ -1,0 +1,8 @@
+﻿  menu.cpp
+menu.obj : error LNK2019: nierozpoznany zewnętrzny symbol "public: int __thiscall Table::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadFromFile@Table@@QAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) przywołany w funkcji "void __cdecl menu_table(void)" (?menu_table@@YAXXZ)
+menu.obj : error LNK2019: nierozpoznany zewnętrzny symbol "public: bool __thiscall Table::IsValueInTable(int)" (?IsValueInTable@Table@@QAE_NH@Z) przywołany w funkcji "void __cdecl menu_table(void)" (?menu_table@@YAXXZ)
+menu.obj : error LNK2019: nierozpoznany zewnętrzny symbol "public: void __thiscall Table::addValue(int,int)" (?addValue@Table@@QAEXHH@Z) przywołany w funkcji "void __cdecl menu_table(void)" (?menu_table@@YAXXZ)
+menu.obj : error LNK2019: nierozpoznany zewnętrzny symbol "public: void __thiscall Table::deleteFromTable(int)" (?deleteFromTable@Table@@QAEXH@Z) przywołany w funkcji "void __cdecl menu_table(void)" (?menu_table@@YAXXZ)
+menu.obj : error LNK2019: nierozpoznany zewnętrzny symbol "public: void __thiscall Table::display(void)" (?display@Table@@QAEXXZ) przywołany w funkcji "void __cdecl menu_table(void)" (?menu_table@@YAXXZ)
+menu.obj : error LNK2019: nierozpoznany zewnętrzny symbol "public: void __thiscall Table::generateTable(int)" (?generateTable@Table@@QAEXH@Z) przywołany w funkcji "void __cdecl menu_table(void)" (?menu_table@@YAXXZ)
+C:\Users\Zdzisław\source\repos\Project1\Debug\Project1.exe : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 6
