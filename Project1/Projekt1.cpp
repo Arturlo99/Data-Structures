@@ -5,101 +5,100 @@ using namespace std;
 
 //deklaracja struktury tablicy
 
-class Tablica	//deklaracja klasy Tablica
+class Table	//deklaracja klasy Tablica
 {
-	int rozmiar_tab; // zmienna okreœlaj¹ca rozmiar tablicy
-	int *wsk_tab;	// wskaŸnik na tablicê
+	int sizeTab; // zmienna okreœlaj¹ca rozmiar tablicy
+	int *pointerTab;	// wskaŸnik na tablicê
 
 public:
 
 	/*konstruktor tworz¹cy tablicê o zadanym rozmiarze*/
-	Tablica(int rozmiar)	
+	Table(int size)	
 	{
-		this->rozmiar_tab = rozmiar;  
-		wsk_tab = new int[rozmiar_tab];
+		this->sizeTab = size;  
+		pointerTab = new int[sizeTab];
 	}
 
 	/*domyœlny konstruktor*/
-	Tablica()
+	Table()
 	{
-		this->rozmiar_tab = 50;			
-		wsk_tab = new int[50];
+		this->sizeTab = 50;			
+		pointerTab = new int[50];
 	}
 
 	/*destruktor*/
-	~Tablica() 
+	~Table() 
 	{
-		delete[] wsk_tab; 
+		delete[] pointerTab; 
 	}
 
 	/*wyœwietlanie struktury tablicy*/
-	void wyswietl() 
+	void display() 
 	{
-		for (int i = 0; i < rozmiar_tab; i++)
+		for (int i = 0; i < sizeTab; i++)
 		{
-			cout << wsk_tab[i] << " ";
+			cout << pointerTab[i] << " ";
 		}
 	}
 
 	/*funkcja wstawiaj¹ca element do tablicy*/
-	void wstaw(int indeks, int wartosc ) 
+	void addValue(int indeks, int wartosc ) 
 	{	
-		int nowy_rozmiar_tab = rozmiar_tab + 1; //utworzenie zmiennej przechowuj¹cej rozmiar tablicy po dodaniu elementu do tablicy
-		int* wsk_nowa_tab;
-		wsk_nowa_tab = new int[nowy_rozmiar_tab]; // utworzenie nowej tablicy o zwiêkszonym rozmiarze
+		int newSizeTab = sizeTab + 1; //utworzenie zmiennej przechowuj¹cej rozmiar tablicy po dodaniu elementu do tablicy
+		int* pointerNewTab;
+		pointerNewTab = new int[newSizeTab]; // utworzenie nowej tablicy o zwiêkszonym rozmiarze
 		
-		for (int i = 0; i < nowy_rozmiar_tab; i++)
+		for (int i = 0; i < newSizeTab; i++)
 		{
 			if (i < indeks) 
 			{
-				wsk_nowa_tab[i] = wsk_tab[i];
+				pointerNewTab[i] = pointerTab[i];
 			}
 			else if (i == indeks) 
 			{
-				wsk_nowa_tab[i] = wartosc;
+				pointerNewTab[i] = wartosc;
 			}
 			else
 			{
-				wsk_nowa_tab[i] = wsk_tab[i - 1];
+				pointerNewTab[i] = pointerTab[i - 1];
 			}
 		}
 
-		delete[] wsk_tab;
-		wsk_tab = wsk_nowa_tab;
-		rozmiar_tab = nowy_rozmiar_tab;
+		delete[] pointerTab;
+		pointerTab = pointerNewTab;
+		sizeTab = newSizeTab;
 	}
 
 	/*funkcja usuwaj¹ca wskazany elemnt z tablicy*/
-	void usun(int indeks)	// funkcja do usuwania wartoœci znajduj¹cej siê zadanym numerze indeksu
+	void deleteValue(int indeks)	// funkcja do usuwania wartoœci znajduj¹cej siê zadanym numerze indeksu
 	{
-		int nowy_rozmiar_tab = rozmiar_tab - 1; //utworzenie zmiennej przechowuj¹cej rozmiar tablicy po usuniêciu elementu z tablicy
-		int* wsk_nowa_tab;
-		wsk_nowa_tab = new int[nowy_rozmiar_tab]; // utworzenie nowej tablicy o mniejszym rozmiarze
+		int newSizeTab = sizeTab - 1; //utworzenie zmiennej przechowuj¹cej rozmiar tablicy po usuniêciu elementu z tablicy
+		int* pointerNewTab;
+		pointerNewTab = new int[newSizeTab]; // utworzenie nowej tablicy o mniejszym rozmiarze
 
-		for (int i = 0; i < rozmiar_tab; i++)
+		for (int i = 0; i < sizeTab; i++)
 		{
 			if (i < indeks)
 			{
-				wsk_nowa_tab[i] = wsk_tab[i];
+				pointerNewTab[i] = pointerTab[i];
 			}
 			else if (i >= indeks)
 			{
-				wsk_nowa_tab[i] = wsk_tab[i + 1];
+				pointerNewTab[i] = pointerTab[i + 1];
 			}
 
 		}
-		delete[]wsk_tab;
-		wsk_tab = wsk_nowa_tab;
-		rozmiar_tab = nowy_rozmiar_tab;
+		delete[]pointerTab;
+		pointerTab = pointerNewTab;
+		sizeTab = newSizeTab;
 	}
 
-
 	/*Zwracanie wartoœci tablicy pod wskazanym indeksem*/
-	string wyszukaj(int wartosc) 
+	string findValue(int wartosc) 
 	{
-		for (int i = 0; i < rozmiar_tab; i++)
+		for (int i = 0; i < sizeTab; i++)
 		{
-			if (wsk_tab[i] == wartosc)
+			if (pointerTab[i] == wartosc)
 			{
 				return "Znaleziono podan¹ wartoœæ" ;
 			}
@@ -108,18 +107,15 @@ public:
 	}
 
 	/*funkcja wype³niaj¹ca tablicê losowymi wartoœciami*/
-	void wypelnij_losowo() 
+	void putRandomValues() 
 	{
 		srand(time(NULL));
-		for (int i = 0; i < rozmiar_tab; i++)
+		for (int i = 0; i < sizeTab; i++)
 		{
-			wsk_tab[i] = rand() % 1000 + 1;
+			pointerTab[i] = rand() % 1000 + 1;
 		}
 
 	}
-
-
-
 
 
 };
