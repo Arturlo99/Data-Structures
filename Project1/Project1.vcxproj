@@ -21,9 +21,12 @@
   <ItemGroup>
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="Źródło.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />
+    <ClInclude Include="Heap.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
