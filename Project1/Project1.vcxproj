@@ -20,13 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="List.cpp" />
-    <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Array.cpp" />
     <ClCompile Include="Heap.cpp" />
-    <ClCompile Include="Źródło.cpp" />
+    <ClCompile Include="BSTtree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />
     <ClInclude Include="Heap.h" />
+    <ClInclude Include="BSTtree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
